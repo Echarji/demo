@@ -1,18 +1,21 @@
 pipeline {
-
     agent any
 
-    stages{
-        stage('Git checkout'){
-            steps{
-                git branch: 'main', url: 'https://github.com/Echarji/demo.git'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-         stage('unit test'){
-             steps{
-
-                sh 'mvn --version'
-             }
-         }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
