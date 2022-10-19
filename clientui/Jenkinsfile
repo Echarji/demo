@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'cd ./clientui'
                 sh 'mvn install'
             }
         }
         stage('Test') {
             steps {
+                cd 'cd ./clientui'
                 sh 'mvn test'
             }
         }
