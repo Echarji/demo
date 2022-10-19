@@ -1,22 +1,19 @@
 pipeline {
     agent any
-
-    stages {
          tools {
-            maven 'maven-3.6.3'
+            maven 'maven'
         }
+    stages {
+
         stage('Build') {
             steps {
-                sh 'cd ./clientui'
-                sh 'mvn install'
+                script {
+                    sh 'cd ./clientui'
+                    sh 'mvn package'
+                }
             }
         }
-        stage('Test') {
-            steps {
-                cd 'cd ./clientui'
-                sh 'mvn test'
-            }
-        }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
