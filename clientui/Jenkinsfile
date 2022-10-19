@@ -2,13 +2,14 @@ pipeline {
     agent any
          tools {
             maven 'maven'
+            jdk 'jdk'
         }
     stages {
 
         stage('Build') {
             steps {
                 script {
-                    sh 'cd ./clientui'
+
                     sh 'mvn package'
                 }
             }
