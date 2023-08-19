@@ -22,4 +22,5 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
+          cat ~/.ssh/id_rsa
           ssh github@64.227.96.168 "cd /path/to/app && echo test"
