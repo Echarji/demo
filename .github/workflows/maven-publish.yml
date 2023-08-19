@@ -23,4 +23,4 @@ jobs:
       - name: Deploy with Docker Compose
         run: |
           cat ~/.ssh/id_rsa
-          ssh github@64.227.96.168 " cd /core  && git pull &&  docker-compose up --build -d"
+          ssh github@64.227.96.168 " ls && cd ~/core  && git pull &&  docker-compose up --build -d"
