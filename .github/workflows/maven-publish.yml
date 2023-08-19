@@ -18,8 +18,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H your_remote_host >> ~/.ssh/known_hosts
+          ssh-keyscan -H 64.227.96.168 >> ~/.ssh/known_hosts
 
       - name: Deploy with Docker Compose
         run: |
-          ssh user@your_remote_host "cd /path/to/app && echo test"
+          ssh github@64.227.96.168 "cd /path/to/app && echo test"
