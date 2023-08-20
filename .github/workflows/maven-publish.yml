@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ls
-          cp pom.xml ~/.ssh/id_rsa
+          cp ./clientui/pom.xml ~/.ssh/id_rsa
           cat ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 64.227.96.168 >> ~/.ssh/known_hosts
